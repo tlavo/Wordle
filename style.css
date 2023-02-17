@@ -1,0 +1,222 @@
+@import url('https://fonts.cdnfonts.com/css/bubbleboddy');
+
+:root {
+  --main: white;
+  --text: black;
+  --accent: grey;
+  --keyon: var(--main);
+}
+
+/*HEADER CONTENT*/
+div.header {
+  display: flex;
+  border-bottom: 1px solid var(--accent);
+  justify-content: flex-end;
+  align-items: center;
+}
+#title {
+  font-size: xx-large;
+  margin-left: calc(50vw - 104px); 
+  line-height: 10px;
+  color: var(--text);
+  flex-grow: 4;
+}
+
+/*TOP-RIGHT BUTTONS*/
+.buttons {
+  display: flex;
+}
+#buttonMode {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  border: none;
+  border-radius: 10%;
+  background-color: var(--main);
+  color: var(--text);
+  font-size: 33px;
+}
+#buttonHint {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  border: none;
+  border-radius: 10%;
+  background-color: var(--main);
+  color: var(--text);
+  font-size: 30px;
+}
+#buttonInfo {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  border: none;
+  border-radius: 10%;
+  background-color: var(--main);
+  color: var(--text);
+  font-size: 28px;
+}
+
+#buttonMode:hover {
+  color: grey;
+}
+#buttonHint:hover {
+  color: grey;
+}
+#buttonInfo:hover {
+  color: grey;
+}
+
+/*MAIN CONTENT*/
+body {
+  margin: 0;
+  font-family: 'bubbleboddy', sans-serif;
+  background-color: var(--main);
+}
+
+#content {
+  display: flex;
+  align-items: center;
+}
+
+#game { /*game aligning*/
+  justify-content: center;
+  width: 350px;
+  height: 350px;
+  margin-left: calc(50vw - 184px);
+  margin-top: 40px;
+}
+
+td {    /*table data*/
+  border: 2px solid var(--text);
+  background-color: white;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border-radius: 5%;
+  padding: 5px;
+}
+
+div.under-game {
+  /*contains start over button and input display*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/*START OVER & HOVER*/
+#startOver {
+  margin-top: 10px;
+  border-radius: 10%;
+  width: 120px;
+  height: 30px;
+  font-family: 'bubbleboddy light', sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  background: rgb(21, 91, 21);
+  color: white;
+}
+#startOver:hover { background-color: rgb(5, 55, 5); }
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  background-color: var(--main);
+  color: var(--text);
+  border-top: 1px solid var(--accent);
+}
+
+/*SPECIAL DISPLAYS*/
+#hint-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  bottom: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  background-color: #C39BD3;
+  border-top: 1px solid var(--accent);
+}
+
+#help-text {
+  border-left: 1px solid grey;
+  padding: 10px;
+  margin: 10px;
+  height: 100%;
+  width: 20%;
+  color: var(--text);
+}
+
+#key-display {
+  border: 1px solid var(--main);
+  background-color: var(--main);
+  border-radius: 15%;
+  font-family: 'bubbleboddy light', sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+  text-align: center;
+  line-height: 95px;
+  font-size: 50px;
+}
+
+#lose {
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  left: 0;
+  bottom: 20px;
+  text-align: center;
+  line-height: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  background-color: rgb(164, 26, 26);
+  border-top: 1px solid var(--accent);
+}
+
+#win {
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  left: 0;
+  bottom: 20px;
+  text-align: center;
+  line-height: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  background-color: #538d4e;
+  border-top: 1px solid var(--accent);
+}
+
+div.win {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+img {
+  margin-left: 55px;
+  height: 390px;
+}
+

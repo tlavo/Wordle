@@ -174,8 +174,8 @@ function checkLetters() {
     // 2 is correct & right spot
     let wordCode = [];
     
-    // dictionary to keep track of number each letter
-    // in the guessWord
+    // dictionary to keep track of number
+    // of each right letter in the guessWord
     let letterCount = {};
     for (let i = 0; i < rightWord.length; i++) {
         let letter = rightWord[i];
@@ -201,7 +201,7 @@ function checkLetters() {
         }
     }
 
-    // 2nd iteration check which are correct & wrong spot (1)
+    // 2nd iteration check which are correct & wrong spot (wordCode = 1)
     for (let i = 0; i < rightWord.length; i++) {
         let letter = guessWord[i];
         // this condition needs to be more complex to check for repeated letter input
@@ -217,7 +217,6 @@ function checkLetters() {
     }
     changeSquare(wordCode);
 }
-
 function changeSquare(code) {
     for (let i = 1; i <= rightWord.length; i++) {
         const boxLoc = guessNum.toString() + i.toString();

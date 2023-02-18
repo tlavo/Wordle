@@ -174,8 +174,8 @@ function checkLetters() {
     // 2 is correct & right spot
     let wordCode = [];
     
-    // dictionary to keep track of number each letter
-    // in the guessWord
+    // dictionary to keep track of number
+    // of each right letter in the guessWord
     let letterCount = {};
     for (let i = 0; i < rightWord.length; i++) {
         let letter = rightWord[i];
@@ -201,7 +201,7 @@ function checkLetters() {
         }
     }
 
-    // 2nd iteration check which are correct & wrong spot (1)
+    // 2nd iteration check which are correct & wrong spot (wordCode = 1)
     for (let i = 0; i < rightWord.length; i++) {
         let letter = guessWord[i];
         // this condition needs to be more complex to check for repeated letter input
@@ -217,7 +217,6 @@ function checkLetters() {
     }
     changeSquare(wordCode);
 }
-
 function changeSquare(code) {
     for (let i = 1; i <= rightWord.length; i++) {
         const boxLoc = guessNum.toString() + i.toString();
@@ -245,15 +244,15 @@ function startOver() {
 
 /*Recieving Input from User & Displaying*/
 async function displayKeyInput(input) {
-    if (!/^[a-z]+$/.test(input) || input.length > 1) {
-        return;
-    }
-    else if (input == 'enter') {
-        input = 'en'
+    if (input == 'enter') {
+        input = 'en';
     } 
     else if (input == 'backspace') {
         input = 'bs';
     } 
+    else if (!/^[a-z]+$/.test(input) || input.length > 1) {
+        return;
+    }
     document.getElementById('key-display').style.backgroundColor = 'var(--accent)';
     document.getElementById('key-display').style.opacity = 1;
     document.getElementById('key-display').innerHTML = '<div id="input-letter">' + input.toUpperCase() + '</div>';

@@ -1,3 +1,61 @@
+/*From: https://www.vocabulary.com/lists/286118*/
+const myDictionary = {
+    dictionary: [
+      { word: "ajar", hint: "slightly open" },
+      { word: "apex", hint: "the highest point of something" },
+      { word: "avid", hint: "marked by active interest and enthusiasm" },
+      { word: "bane", hint: "something causing misery or death" },
+      { word: "bard", hint: "a lyric poet" },
+      { word: "bent", hint: "stooped (used of the back and knees)" },
+      { word: "bevy", hint: "a flock of birds" },
+      { word: "bilk", hint: "cheat somebody out of what is due, especially money" },
+      { word: "boon", hint: "something that is desirable, favorable, or beneficial" },
+      { word: "boor", hint: "a crude uncouth ill-bred person lacking refinement" },
+      { word: "curt", hint: "brief and to the point" },
+      { word: "deft", hint: "skillful in physical movements; especially of the hands" },
+      { word: "dire", hint: "fraught with extreme danger; nearly hopeless" },
+      { word: "diva", hint: "a distinguished female operatic singer... aka jojo" },
+      { word: "dolt", hint: "a person who is not very bright" },
+      { word: "dupe", hint: "fool or hoax" },
+      { word: "fawn", hint: "a young deer" },
+      { word: "foil", hint: "hinder or prevent, as an effort, plan, or desire" },
+      { word: "gait", hint: "an animal's manner of moving" },
+      { word: "gale", hint: "a strong wind moving 34–40 knots... aka not Peeta" },
+      { word: "garb", hint: "clothing of a distinctive style or for a particular occasion" },
+      { word: "glib", hint: "artfully persuasive in speech" },
+      { word: "glut", hint: "supply with an excess of" },
+      { word: "guru", hint: "a Hindu or Buddhist religious leader/spiritual teacher... BLANK pathik" },
+      { word: "hack", hint: "chop or cut away... or I'm a BLANKer" },
+      { word: "hail", hint: "precipitation of ice pellets" },
+      { word: "hale", hint: "exhibiting or restored to vigorous good health" },
+      { word: "heed", hint: "careful attention" },
+      { word: "hone", hint: "sharpen with a whetstone" },
+      { word: "icon", hint: "a visual representation produced on a surface" },
+      { word: "iota", hint: "a tiny or scarcely detectable amount" },
+      { word: "keen", hint: "intense or sharp" },
+      { word: "laud", hint: "praise, glorify, or honor" },
+      { word: "loom", hint: "a textile machine for weaving yarn into a textile" },
+      { word: "mire", hint: "a soft wet area of low-lying land that sinks underfoot" },
+      { word: "mock", hint: "treat with contempt" },
+      { word: "molt", hint: "cast off hair, skin, horn, or feathers" },
+      { word: "onus", hint: "a burdensome or difficult concern" },
+      { word: "opus", hint: "a musical work that has been created" },
+      { word: "oust", hint: "remove from a position or office" },
+      { word: "pact", hint: "a written agreement between two states or sovereigns" },
+      { word: "sway", hint: "move back and forth" },
+      { word: "tact", hint: "consideration in dealing with others" },
+      { word: "tome", hint: "a large and scholarly book" },
+      { word: "tout", hint: "advertise in strongly positive terms" },
+      { word: "tyro", hint: "someone new to a field or activity" },
+      { word: "void", hint: "an empty area or space" },
+      { word: "wary", hint: "marked by keen caution and watchful prudence" },
+      { word: "whet", hint: "sharpen by rubbing" },
+      { word: "wily", hint: "marked by skill in deception" },
+      { word: "sage", hint: "a mentor in spiritual and philosophical topics" },
+      { word: "ruse", hint: "a deceptive maneuver, especially to avoid capture" }
+    ]
+};
+
 let rightWord = '';
 let guessWord = '';
 let hint = '';
@@ -11,15 +69,21 @@ let showInfo = true;
 let dark = false;
 
 /*Recieving Data from Dictionary & Loading Site*/
-async function dictionary(CB){
-    const res = await fetch("https://api.masoudkf.com/v1/wordle", {
-    headers: {"x-api-key": "sw0Tr2othT1AyTQtNDUE06LqMckbTiKWaVYhuirv",},})
-    .then(res => res.text());
-    data = JSON.parse(res);
-    wordList = data['dictionary'];
-    CB(wordList);
+// DOES NOT WORK (taken down)
+// async function dictionary(CB){
+//     const res = await fetch("https://api.masoudkf.com/v1/wordle", {
+//     headers: {"x-api-key": "sw0Tr2othT1AyTQtNDUE06LqMckbTiKWaVYhuirv",},})
+//     .then(res => res.text());
+//     data = JSON.parse(res);
+//     wordList = data['dictionary'];
+//     CB(wordList);
 
-    return wordList;
+//     return wordList;
+// }
+async function dictionary(CB) {
+    // Use the imported dictionary
+    CB(myDictionary.dictionary);
+    return myDictionary.dictionary;
 }
 function loadSite() {
     let temp = dictionary(function(wl) {
